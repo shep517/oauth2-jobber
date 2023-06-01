@@ -40,7 +40,8 @@ class Jobber extends AbstractProvider
      */
     public function getBaseAuthorizationUrl()
     {
-        return 'https://api.getjobber.com/api/oauth/authorize?client_id=<CLIENT_ID>&redirect_uri=<CALLBACK_URL>&state=<STATE>';
+        // return 'https://api.getjobber.com/api/oauth/authorize?client_id=<CLIENT_ID>&redirect_uri=<CALLBACK_URL>&state=<STATE>';
+        return 'https://api.getjobber.com/api/oauth/authorize';
     }
 
     /**
@@ -50,7 +51,19 @@ class Jobber extends AbstractProvider
      */
     public function getBaseAccessTokenUrl(array $params)
     {
-        return 'api.getjobber.com/api/oauth/token';
+        return 'https://api.getjobber.com/api/oauth/token';
+    }
+
+    /**
+     * Get provider url to fetch account metadata
+     *
+     * @param  AccessToken $token
+     *
+     * @return string
+     */
+    public function getResourceOwnerDetailsUrl(AccessToken $token)
+    {
+        return 'https://api.getjobber.com/api/';
     }
 
     /**
